@@ -192,7 +192,7 @@
 
   </nav>
 
-  <!-- HERO -->
+  <!-- HERO SECTION -->
 
   <section class="hero" id="home">
 
@@ -228,7 +228,9 @@
         </p>
 
         <button class="btn" onclick="openRegisterForm()">
+
           Register
+
         </button>
 
       </div>
@@ -244,11 +246,13 @@
         <p><strong>Date:</strong> 30 May 2026</p>
 
         <p>
-          Learn frontend and backend development from industry experts.
+          Learn frontend and backend development from experts.
         </p>
 
         <button class="btn" onclick="openRegisterForm()">
+
           Register
+
         </button>
 
       </div>
@@ -268,7 +272,9 @@
         </p>
 
         <button class="btn" onclick="openRegisterForm()">
+
           Register
+
         </button>
 
       </div>
@@ -278,7 +284,7 @@
     <!-- REGISTRATION FORM -->
 
     <div class="form-section"
-         id="register"
+         id="registerForm"
          style="display:none;">
 
       <h2>Event Registration Form</h2>
@@ -306,7 +312,7 @@
         <label>Phone Number</label>
 
         <input type="tel"
-               placeholder="Enter phone number"
+               placeholder="Enter your phone number"
                required>
 
         <button type="submit" class="btn">
@@ -343,7 +349,7 @@
         <label>College / Organization</label>
 
         <input type="text"
-               placeholder="Enter college name"
+               placeholder="Enter college or organization"
                required>
 
         <label>Date</label>
@@ -374,7 +380,7 @@
 
     </div>
 
-    <!-- AI AGENT -->
+    <!-- AI AGENT SECTION -->
 
     <div class="form-section" id="aiagent">
 
@@ -383,15 +389,15 @@
       <p>
         Our AI Agent automatically scans college social media pages,
         websites and event posts to detect upcoming competitions,
-        hackathons and workshops.
+        workshops and hackathons.
       </p>
 
       <br>
 
       <p>
-        The AI extracts event dates, timings, venues and registration
-        links using intelligent web scraping and NLP techniques,
-        then updates the platform in real-time.
+        The AI extracts event names, dates, timings, venues and
+        registration details using intelligent web scraping and
+        NLP techniques, then updates the platform automatically.
       </p>
 
       <br>
@@ -406,7 +412,7 @@
       <div class="success-message"
            id="aiSuccess">
 
-        AI Agent scanned social media pages and updated latest events successfully!
+        AI Agent scanned college social media pages and updated latest events successfully!
 
       </div>
 
@@ -443,13 +449,13 @@
 
     function openRegisterForm() {
 
-      const registerSection =
-      document.getElementById("register");
+      let form =
+      document.getElementById("registerForm");
 
-      registerSection.style.display = "block";
+      form.style.display = "block";
 
-      registerSection.scrollIntoView({
-        behavior: "smooth"
+      form.scrollIntoView({
+        behavior:"smooth"
       });
 
     }
