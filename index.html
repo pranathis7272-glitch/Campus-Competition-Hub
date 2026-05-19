@@ -1,479 +1,333 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
+<title>Campus Competition Hub</title>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
 
-  <title>Campus Competition Hub</title>
+body{
+font-family:Arial;
+margin:0;
+background:#f4f6f9;
+}
 
-  <style>
+header{
+background:#1e3a8a;
+color:white;
+padding:20px;
+text-align:center;
+}
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:Arial, sans-serif;
-      scroll-behavior:smooth;
-    }
+nav{
+background:#2563eb;
+padding:15px;
+text-align:center;
+}
 
-    body{
-      background:#f4f6f9;
-    }
+nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+font-weight:bold;
+}
 
-    header{
-      background:#1e3a8a;
-      color:white;
-      text-align:center;
-      padding:20px;
-    }
+.hero{
+padding:50px;
+text-align:center;
+background:white;
+}
 
-    header h1{
-      margin-bottom:10px;
-    }
+.container{
+padding:40px;
+}
 
-    nav{
-      display:flex;
-      justify-content:center;
-      gap:25px;
-      background:#2563eb;
-      padding:15px;
-      position:sticky;
-      top:0;
-      z-index:1000;
-    }
+.card{
+background:white;
+padding:20px;
+margin-bottom:20px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
 
-    nav a{
-      color:white;
-      text-decoration:none;
-      font-weight:bold;
-      transition:0.3s;
-    }
+.btn{
+background:#2563eb;
+color:white;
+padding:10px 20px;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
 
-    nav a:hover{
-      color:yellow;
-    }
+.btn:hover{
+background:#1e3a8a;
+}
 
-    .hero{
-      background:white;
-      text-align:center;
-      padding:70px 20px;
-    }
+.form-section{
+background:white;
+padding:30px;
+margin-top:30px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
 
-    .hero h1{
-      color:#1e3a8a;
-      font-size:42px;
-      margin-bottom:20px;
-    }
+input,textarea{
+width:100%;
+padding:12px;
+margin-top:10px;
+margin-bottom:20px;
+border:1px solid #ccc;
+border-radius:5px;
+}
 
-    .hero p{
-      color:#555;
-      font-size:18px;
-      max-width:800px;
-      margin:auto;
-      line-height:1.6;
-    }
+footer{
+background:#1e3a8a;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:40px;
+}
 
-    .container{
-      padding:40px;
-    }
+/* POPUP */
 
-    h2{
-      color:#1e3a8a;
-      margin-bottom:20px;
-    }
+#popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+}
 
-    .events{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:20px;
-    }
+.popup-content{
+background:white;
+width:90%;
+max-width:400px;
+padding:30px;
+margin:80px auto;
+border-radius:10px;
+}
 
-    .card{
-      background:white;
-      padding:20px;
-      border-radius:12px;
-      box-shadow:0 4px 10px rgba(0,0,0,0.1);
-      transition:0.3s;
-    }
-
-    .card:hover{
-      transform:translateY(-5px);
-    }
-
-    .card h3{
-      color:#2563eb;
-      margin-bottom:10px;
-    }
-
-    .card p{
-      color:#555;
-      margin-bottom:10px;
-      line-height:1.5;
-    }
-
-    .btn{
-      background:#2563eb;
-      color:white;
-      border:none;
-      padding:12px 20px;
-      border-radius:6px;
-      cursor:pointer;
-      font-size:16px;
-      transition:0.3s;
-    }
-
-    .btn:hover{
-      background:#1e3a8a;
-    }
-
-    .form-section{
-      background:white;
-      margin-top:40px;
-      padding:30px;
-      border-radius:12px;
-      box-shadow:0 4px 10px rgba(0,0,0,0.1);
-    }
-
-    input, textarea{
-      width:100%;
-      padding:12px;
-      margin-top:10px;
-      margin-bottom:20px;
-      border:1px solid #ccc;
-      border-radius:6px;
-      font-size:16px;
-    }
-
-    footer{
-      background:#1e3a8a;
-      color:white;
-      text-align:center;
-      padding:18px;
-      margin-top:50px;
-    }
-
-    /* POPUP */
-
-    #popupForm{
-      display:none;
-      position:fixed;
-      top:0;
-      left:0;
-      width:100%;
-      height:100%;
-      background:rgba(0,0,0,0.6);
-      z-index:9999;
-    }
-
-    .popup-content{
-      background:white;
-      width:90%;
-      max-width:400px;
-      margin:80px auto;
-      padding:30px;
-      border-radius:12px;
-    }
-
-  </style>
+</style>
 
 </head>
 
 <body>
 
-  <!-- HEADER -->
+<header>
 
-  <header>
+<h1>Campus Competition Hub</h1>
 
-    <h1>Campus Competition Hub</h1>
+<p>One Platform for Every Student Opportunity</p>
 
-    <p>One Platform for Every Student Opportunity</p>
+</header>
 
-  </header>
+<nav>
 
-  <!-- NAVBAR -->
+<a href="#">Home</a>
+<a href="#events">Events</a>
+<a href="#upload">Upload Event</a>
+<a href="#ai">AI Agent</a>
 
-  <nav>
+</nav>
 
-    <a href="#home">Home</a>
-    <a href="#events">Events</a>
-    <a href="#upload">Upload Event</a>
-    <a href="#aiagent">AI Agent</a>
-    <a href="#contact">Contact</a>
+<section class="hero">
 
-  </nav>
+<h1>Discover Competitions Easily</h1>
 
-  <!-- HERO SECTION -->
+<p>
+Find hackathons, workshops, coding contests and college events in one place.
+</p>
 
-  <section class="hero" id="home">
+</section>
 
-    <h1>Discover Competitions Easily</h1>
+<div class="container" id="events">
 
-    <p>
-      Find technical, cultural, sports, workshops and hackathons
-      from various colleges in one centralized platform.
-    </p>
+<h2>Upcoming Events</h2>
 
-  </section>
+<div class="card">
 
-  <!-- EVENTS -->
+<h3>AI Hackathon 2026</h3>
 
-  <div class="container" id="events">
+<p>Date: 25 May 2026</p>
 
-    <h2>Upcoming Events</h2>
+<p>College: XYZ Engineering College</p>
 
-    <div class="events">
+<button class="btn" onclick="openPopup()">
 
-      <!-- EVENT 1 -->
+Register
 
-      <div class="card">
+</button>
 
-        <h3>AI Hackathon 2026</h3>
+</div>
 
-        <p><strong>College:</strong> XYZ Engineering College</p>
+<div class="card">
 
-        <p><strong>Date:</strong> 25 May 2026</p>
+<h3>Web Development Workshop</h3>
 
-        <p>
-          Build innovative AI solutions and compete with students nationwide.
-        </p>
+<p>Date: 30 May 2026</p>
 
-        <button class="btn"
-        onclick="document.getElementById('popupForm').style.display='block'">
+<p>Organizer: ABC University</p>
 
-          Register
+<button class="btn" onclick="openPopup()">
 
-        </button>
+Register
 
-      </div>
+</button>
 
-      <!-- EVENT 2 -->
+</div>
 
-      <div class="card">
+<!-- UPLOAD EVENT -->
 
-        <h3>Web Development Workshop</h3>
+<div class="form-section" id="upload">
 
-        <p><strong>Organizer:</strong> ABC University</p>
+<h2>Upload New Event</h2>
 
-        <p><strong>Date:</strong> 30 May 2026</p>
+<form onsubmit="uploadEvent(event)">
 
-        <p>
-          Learn frontend and backend development from experts.
-        </p>
+<input type="text"
+placeholder="Event Name"
+required>
 
-        <button class="btn"
-        onclick="document.getElementById('popupForm').style.display='block'">
+<input type="text"
+placeholder="College Name"
+required>
 
-          Register
+<input type="date"
+required>
 
-        </button>
+<textarea
+placeholder="Event Description"
+required></textarea>
 
-      </div>
+<button type="submit" class="btn">
 
-      <!-- EVENT 3 -->
+Upload Event
 
-      <div class="card">
+</button>
 
-        <h3>National Coding Contest</h3>
+</form>
 
-        <p><strong>Organizer:</strong> Tech Community</p>
+</div>
 
-        <p><strong>Date:</strong> 10 June 2026</p>
+<!-- AI AGENT -->
 
-        <p>
-          Showcase your coding skills and win exciting prizes.
-        </p>
+<div class="form-section" id="ai">
 
-        <button class="btn"
-        onclick="document.getElementById('popupForm').style.display='block'">
+<h2>AI Event Tracking Agent</h2>
 
-          Register
+<p>
+Our AI Agent scans college social media pages and websites
+to automatically update latest event dates, timings,
+registration links and competition details.
+</p>
 
-        </button>
+<br>
 
-      </div>
+<button class="btn" onclick="runAI()">
 
-    </div>
+Run AI Agent
 
-    <!-- UPLOAD EVENT -->
+</button>
 
-    <div class="form-section" id="upload">
+</div>
 
-      <h2>Upload New Event</h2>
+</div>
 
-      <form onsubmit="uploadSuccess(event)">
+<!-- REGISTRATION POPUP -->
 
-        <label>Event Name</label>
+<div id="popup">
 
-        <input type="text"
-        placeholder="Enter event name"
-        required>
+<div class="popup-content">
 
-        <label>College / Organization</label>
+<h2>Registration Form</h2>
 
-        <input type="text"
-        placeholder="Enter college or organization"
-        required>
+<form onsubmit="submitRegistration(event)">
 
-        <label>Date</label>
+<input type="text"
+placeholder="Full Name"
+required>
 
-        <input type="date"
-        required>
+<input type="email"
+placeholder="Email"
+required>
 
-        <label>Description</label>
+<input type="text"
+placeholder="College Name"
+required>
 
-        <textarea rows="5"
-        placeholder="Enter event details"
-        required></textarea>
+<input type="tel"
+placeholder="Phone Number"
+required>
 
-        <button type="submit" class="btn">
+<button type="submit" class="btn">
 
-          Upload Event
+Submit
 
-        </button>
+</button>
 
-      </form>
+<button type="button"
+class="btn"
+style="background:red;"
+onclick="closePopup()">
 
-    </div>
+Close
 
-    <!-- AI AGENT -->
+</button>
 
-    <div class="form-section" id="aiagent">
+</form>
 
-      <h2>AI Event Tracking Agent</h2>
+</div>
 
-      <p>
-        Our AI Agent automatically scans college social media pages,
-        websites and event posts to detect upcoming competitions,
-        workshops and hackathons.
-      </p>
+</div>
 
-      <br>
+<footer>
 
-      <p>
-        The AI extracts event names, dates, timings, venues and
-        registration details using intelligent web scraping and NLP
-        techniques, then updates the platform automatically.
-      </p>
+<p>
+© 2026 Campus Competition Hub
+</p>
 
-      <br>
+</footer>
 
-      <button class="btn"
-      onclick="runAIAgent()">
+<script>
 
-        Run AI Agent
+function openPopup(){
 
-      </button>
+document.getElementById("popup").style.display="block";
 
-    </div>
+}
 
-    <!-- CONTACT -->
+function closePopup(){
 
-    <div class="form-section" id="contact">
+document.getElementById("popup").style.display="none";
 
-      <h2>Contact</h2>
+}
 
-      <p>Email: campushub@gmail.com</p>
+function submitRegistration(event){
 
-      <p>Phone: +91 9876543210</p>
+event.preventDefault();
 
-    </div>
+alert("Registration Successful!");
 
-  </div>
+closePopup();
 
-  <!-- REGISTRATION POPUP -->
+}
 
-  <div id="popupForm">
+function uploadEvent(event){
 
-    <div class="popup-content">
+event.preventDefault();
 
-      <h2 style="color:#1e3a8a;margin-bottom:20px;">
+alert("Event Uploaded Successfully!");
 
-        Event Registration
+}
 
-      </h2>
+function runAI(){
 
-      <form onsubmit="registerSuccess(event)">
+alert("AI Agent scanned college social media pages and updated latest events!");
 
-        <input type="text"
-        placeholder="Full Name"
-        required>
+}
 
-        <input type="email"
-        placeholder="Email"
-        required>
-
-        <input type="text"
-        placeholder="College Name"
-        required>
-
-        <input type="tel"
-        placeholder="Phone Number"
-        required>
-
-        <button type="submit" class="btn">
-
-          Submit
-
-        </button>
-
-        <button type="button"
-        class="btn"
-        onclick="document.getElementById('popupForm').style.display='none'"
-        style="margin-left:10px;background:red;">
-
-          Close
-
-        </button>
-
-      </form>
-
-    </div>
-
-  </div>
-
-  <!-- FOOTER -->
-
-  <footer>
-
-    <p>
-      © 2026 Campus Competition Hub |
-      Developed for Hackathon Prototype
-    </p>
-
-  </footer>
-
-  <!-- JAVASCRIPT -->
-
-  <script>
-
-    function registerSuccess(event){
-
-      event.preventDefault();
-
-      alert("Registration Successful!");
-
-      document.getElementById('popupForm').style.display='none';
-
-    }
-
-    function uploadSuccess(event){
-
-      event.preventDefault();
-
-      alert("Event Uploaded Successfully!");
-
-    }
-
-    function runAIAgent(){
-
-      alert("AI Agent scanned college social media pages and updated latest events!");
-
-    }
-
-  </script>
+</script>
 
 </body>
-
 </html>
