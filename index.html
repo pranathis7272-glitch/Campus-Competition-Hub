@@ -186,14 +186,13 @@
 
     <a href="#home">Home</a>
     <a href="#events">Events</a>
-    <a href="#register">Register</a>
     <a href="#upload">Upload Event</a>
     <a href="#aiagent">AI Agent</a>
     <a href="#contact">Contact</a>
 
   </nav>
 
-  <!-- HERO SECTION -->
+  <!-- HERO -->
 
   <section class="hero" id="home">
 
@@ -206,7 +205,7 @@
 
   </section>
 
-  <!-- EVENTS SECTION -->
+  <!-- EVENTS -->
 
   <div class="container" id="events">
 
@@ -278,31 +277,48 @@
 
     <!-- REGISTRATION FORM -->
 
-    <div class="form-section" id="register">
+    <div class="form-section"
+         id="register"
+         style="display:none;">
 
-      <h2>Event Registration</h2>
+      <h2>Event Registration Form</h2>
 
       <form onsubmit="registerSuccess(event)">
 
         <label>Full Name</label>
-        <input type="text" placeholder="Enter your full name" required>
+
+        <input type="text"
+               placeholder="Enter your full name"
+               required>
 
         <label>Email</label>
-        <input type="email" placeholder="Enter your email" required>
+
+        <input type="email"
+               placeholder="Enter your email"
+               required>
 
         <label>College Name</label>
-        <input type="text" placeholder="Enter college name" required>
+
+        <input type="text"
+               placeholder="Enter your college name"
+               required>
 
         <label>Phone Number</label>
-        <input type="tel" placeholder="Enter phone number" required>
+
+        <input type="tel"
+               placeholder="Enter phone number"
+               required>
 
         <button type="submit" class="btn">
+
           Submit Registration
+
         </button>
 
       </form>
 
-      <div class="success-message" id="registrationSuccess">
+      <div class="success-message"
+           id="registrationSuccess">
 
         Registration Successful!
 
@@ -310,7 +326,7 @@
 
     </div>
 
-    <!-- UPLOAD EVENT SECTION -->
+    <!-- UPLOAD EVENT -->
 
     <div class="form-section" id="upload">
 
@@ -319,27 +335,38 @@
       <form onsubmit="uploadSuccess(event)">
 
         <label>Event Name</label>
-        <input type="text" placeholder="Enter event name" required>
+
+        <input type="text"
+               placeholder="Enter event name"
+               required>
 
         <label>College / Organization</label>
-        <input type="text" placeholder="Enter college name" required>
+
+        <input type="text"
+               placeholder="Enter college name"
+               required>
 
         <label>Date</label>
-        <input type="date" required>
+
+        <input type="date"
+               required>
 
         <label>Description</label>
 
         <textarea rows="5"
-        placeholder="Enter event details"
-        required></textarea>
+                  placeholder="Enter event details"
+                  required></textarea>
 
         <button type="submit" class="btn">
+
           Upload Event
+
         </button>
 
       </form>
 
-      <div class="success-message" id="uploadSuccess">
+      <div class="success-message"
+           id="uploadSuccess">
 
         Event Uploaded Successfully!
 
@@ -347,7 +374,7 @@
 
     </div>
 
-    <!-- AI AGENT SECTION -->
+    <!-- AI AGENT -->
 
     <div class="form-section" id="aiagent">
 
@@ -359,6 +386,8 @@
         hackathons and workshops.
       </p>
 
+      <br>
+
       <p>
         The AI extracts event dates, timings, venues and registration
         links using intelligent web scraping and NLP techniques,
@@ -367,13 +396,15 @@
 
       <br>
 
-      <button class="btn" onclick="runAIAgent()">
+      <button class="btn"
+              onclick="runAIAgent()">
 
         Run AI Agent
 
       </button>
 
-      <div class="success-message" id="aiSuccess">
+      <div class="success-message"
+           id="aiSuccess">
 
         AI Agent scanned social media pages and updated latest events successfully!
 
@@ -381,7 +412,7 @@
 
     </div>
 
-    <!-- CONTACT SECTION -->
+    <!-- CONTACT -->
 
     <div class="form-section" id="contact">
 
@@ -400,7 +431,8 @@
   <footer>
 
     <p>
-      © 2026 Campus Competition Hub | Developed for Hackathon Prototype
+      © 2026 Campus Competition Hub |
+      Developed for Hackathon Prototype
     </p>
 
   </footer>
@@ -411,8 +443,14 @@
 
     function openRegisterForm() {
 
-      document.getElementById("register")
-      .scrollIntoView({ behavior: "smooth" });
+      const registerSection =
+      document.getElementById("register");
+
+      registerSection.style.display = "block";
+
+      registerSection.scrollIntoView({
+        behavior: "smooth"
+      });
 
     }
 
@@ -420,7 +458,8 @@
 
       event.preventDefault();
 
-      document.getElementById("registrationSuccess")
+      document.getElementById(
+      "registrationSuccess")
       .style.display = "block";
 
     }
@@ -429,14 +468,16 @@
 
       event.preventDefault();
 
-      document.getElementById("uploadSuccess")
+      document.getElementById(
+      "uploadSuccess")
       .style.display = "block";
 
     }
 
     function runAIAgent() {
 
-      document.getElementById("aiSuccess")
+      document.getElementById(
+      "aiSuccess")
       .style.display = "block";
 
     }
