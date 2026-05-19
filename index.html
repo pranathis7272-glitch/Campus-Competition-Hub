@@ -257,8 +257,9 @@
           Compete with students nationwide and improve coding skills.
         </p>
 
-        <a href="https://forms.gle/" target="_blank" class="btn">
-          Register
+        <button class="btn" onclick="registerMessage()">
+  Register
+</button>
         </a>
       </div>
 
@@ -334,11 +335,17 @@
 
     function showMessage(event) {
 
-      event.preventDefault();
+    event.preventDefault();
 
-      alert("Event uploaded successfully!");
+    alert("Event uploaded successfully!");
 
-    }
+  }
+
+  function registerMessage() {
+
+    alert("Registration Successful!");
+
+  }
 
   </script>
 
