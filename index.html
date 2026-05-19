@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -13,7 +14,7 @@
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family: Arial, sans-serif;
+      font-family:Arial, sans-serif;
       scroll-behavior:smooth;
     }
 
@@ -24,8 +25,8 @@
     header{
       background:#1e3a8a;
       color:white;
-      padding:20px;
       text-align:center;
+      padding:20px;
     }
 
     header h1{
@@ -40,6 +41,7 @@
       padding:15px;
       position:sticky;
       top:0;
+      z-index:1000;
     }
 
     nav a{
@@ -54,20 +56,20 @@
     }
 
     .hero{
+      background:white;
       text-align:center;
       padding:70px 20px;
-      background:white;
     }
 
     .hero h1{
-      font-size:42px;
       color:#1e3a8a;
+      font-size:42px;
       margin-bottom:20px;
     }
 
     .hero p{
-      font-size:18px;
       color:#555;
+      font-size:18px;
       max-width:800px;
       margin:auto;
       line-height:1.6;
@@ -90,8 +92,8 @@
 
     .card{
       background:white;
-      border-radius:12px;
       padding:20px;
+      border-radius:12px;
       box-shadow:0 4px 10px rgba(0,0,0,0.1);
       transition:0.3s;
     }
@@ -106,8 +108,8 @@
     }
 
     .card p{
-      margin-bottom:10px;
       color:#555;
+      margin-bottom:10px;
       line-height:1.5;
     }
 
@@ -115,7 +117,7 @@
       background:#2563eb;
       color:white;
       border:none;
-      padding:10px 18px;
+      padding:12px 20px;
       border-radius:6px;
       cursor:pointer;
       font-size:16px;
@@ -126,9 +128,9 @@
       background:#1e3a8a;
     }
 
-    .upload-section{
+    .form-section{
       background:white;
-      margin-top:50px;
+      margin-top:40px;
       padding:30px;
       border-radius:12px;
       box-shadow:0 4px 10px rgba(0,0,0,0.1);
@@ -144,34 +146,22 @@
       font-size:16px;
     }
 
-    button{
-      background:#1e3a8a;
-      color:white;
-      border:none;
-      padding:12px 20px;
-      border-radius:6px;
-      cursor:pointer;
-      font-size:16px;
-    }
-
-    button:hover{
-      background:#2563eb;
-    }
-
-    .about, .contact{
-      background:white;
-      margin-top:40px;
-      padding:30px;
-      border-radius:12px;
-      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    .success-message{
+      display:none;
+      margin-top:20px;
+      padding:15px;
+      background:#d1fae5;
+      color:#065f46;
+      border-radius:8px;
+      font-weight:bold;
     }
 
     footer{
-      margin-top:50px;
       background:#1e3a8a;
       color:white;
       text-align:center;
       padding:18px;
+      margin-top:50px;
     }
 
   </style>
@@ -183,18 +173,24 @@
   <!-- HEADER -->
 
   <header>
+
     <h1>Campus Competition Hub</h1>
+
     <p>One Platform for Every Student Opportunity</p>
+
   </header>
 
-  <!-- NAVIGATION BAR -->
+  <!-- NAVBAR -->
 
   <nav>
+
     <a href="#home">Home</a>
     <a href="#events">Events</a>
-    <a href="#hackathons">Hackathons</a>
-    <a href="#workshops">Workshops</a>
+    <a href="#register">Register</a>
+    <a href="#upload">Upload Event</a>
+    <a href="#aiagent">AI Agent</a>
     <a href="#contact">Contact</a>
+
   </nav>
 
   <!-- HERO SECTION -->
@@ -204,8 +200,8 @@
     <h1>Discover Competitions Easily</h1>
 
     <p>
-      Find technical, cultural, sports, workshops, hackathons and academic
-      events from different colleges in one centralized platform.
+      Find technical, cultural, sports, workshops and hackathons
+      from various colleges in one centralized platform.
     </p>
 
   </section>
@@ -220,7 +216,7 @@
 
       <!-- EVENT 1 -->
 
-      <div class="card" id="hackathons">
+      <div class="card">
 
         <h3>AI Hackathon 2026</h3>
 
@@ -229,10 +225,10 @@
         <p><strong>Date:</strong> 25 May 2026</p>
 
         <p>
-          Participate in an exciting AI hackathon and build innovative solutions.
+          Build innovative AI solutions and compete with students nationwide.
         </p>
 
-        <button class="btn" onclick="registerMessage()">
+        <button class="btn" onclick="openRegisterForm()">
           Register
         </button>
 
@@ -240,7 +236,7 @@
 
       <!-- EVENT 2 -->
 
-      <div class="card" id="workshops">
+      <div class="card">
 
         <h3>Web Development Workshop</h3>
 
@@ -252,7 +248,7 @@
           Learn frontend and backend development from industry experts.
         </p>
 
-        <button class="btn" onclick="registerMessage()">
+        <button class="btn" onclick="openRegisterForm()">
           Register
         </button>
 
@@ -269,10 +265,10 @@
         <p><strong>Date:</strong> 10 June 2026</p>
 
         <p>
-          Compete with students nationwide and improve coding skills.
+          Showcase your coding skills and win exciting prizes.
         </p>
 
-        <button class="btn" onclick="registerMessage()">
+        <button class="btn" onclick="openRegisterForm()">
           Register
         </button>
 
@@ -280,13 +276,47 @@
 
     </div>
 
-    <!-- UPLOAD EVENT FORM -->
+    <!-- REGISTRATION FORM -->
 
-    <div class="upload-section">
+    <div class="form-section" id="register">
+
+      <h2>Event Registration</h2>
+
+      <form onsubmit="registerSuccess(event)">
+
+        <label>Full Name</label>
+        <input type="text" placeholder="Enter your full name" required>
+
+        <label>Email</label>
+        <input type="email" placeholder="Enter your email" required>
+
+        <label>College Name</label>
+        <input type="text" placeholder="Enter college name" required>
+
+        <label>Phone Number</label>
+        <input type="tel" placeholder="Enter phone number" required>
+
+        <button type="submit" class="btn">
+          Submit Registration
+        </button>
+
+      </form>
+
+      <div class="success-message" id="registrationSuccess">
+
+        Registration Successful!
+
+      </div>
+
+    </div>
+
+    <!-- UPLOAD EVENT SECTION -->
+
+    <div class="form-section" id="upload">
 
       <h2>Upload New Event</h2>
 
-      <form onsubmit="showMessage(event)">
+      <form onsubmit="uploadSuccess(event)">
 
         <label>Event Name</label>
         <input type="text" placeholder="Enter event name" required>
@@ -300,34 +330,60 @@
         <label>Description</label>
 
         <textarea rows="5"
-          placeholder="Enter event details"
-          required></textarea>
+        placeholder="Enter event details"
+        required></textarea>
 
-        <button type="submit">
+        <button type="submit" class="btn">
           Upload Event
         </button>
 
       </form>
 
+      <div class="success-message" id="uploadSuccess">
+
+        Event Uploaded Successfully!
+
+      </div>
+
     </div>
 
-    <!-- ABOUT SECTION -->
+    <!-- AI AGENT SECTION -->
 
-    <div class="about">
+    <div class="form-section" id="aiagent">
 
-      <h2>About Platform</h2>
+      <h2>AI Event Tracking Agent</h2>
 
       <p>
-        Campus Competition Hub is a centralized web platform where students
-        can discover inter-college competitions, workshops, hackathons,
-        cultural events and sports activities in one place.
+        Our AI Agent automatically scans college social media pages,
+        websites and event posts to detect upcoming competitions,
+        hackathons and workshops.
       </p>
+
+      <p>
+        The AI extracts event dates, timings, venues and registration
+        links using intelligent web scraping and NLP techniques,
+        then updates the platform in real-time.
+      </p>
+
+      <br>
+
+      <button class="btn" onclick="runAIAgent()">
+
+        Run AI Agent
+
+      </button>
+
+      <div class="success-message" id="aiSuccess">
+
+        AI Agent scanned social media pages and updated latest events successfully!
+
+      </div>
 
     </div>
 
     <!-- CONTACT SECTION -->
 
-    <div class="contact" id="contact">
+    <div class="form-section" id="contact">
 
       <h2>Contact</h2>
 
@@ -353,17 +409,35 @@
 
   <script>
 
-    function showMessage(event) {
+    function openRegisterForm() {
 
-      event.preventDefault();
-
-      alert("Event uploaded successfully!");
+      document.getElementById("register")
+      .scrollIntoView({ behavior: "smooth" });
 
     }
 
-    function registerMessage() {
+    function registerSuccess(event) {
 
-      alert("Registration Successful!");
+      event.preventDefault();
+
+      document.getElementById("registrationSuccess")
+      .style.display = "block";
+
+    }
+
+    function uploadSuccess(event) {
+
+      event.preventDefault();
+
+      document.getElementById("uploadSuccess")
+      .style.display = "block";
+
+    }
+
+    function runAIAgent() {
+
+      document.getElementById("aiSuccess")
+      .style.display = "block";
 
     }
 
