@@ -17,68 +17,7 @@
       font-family:Arial, sans-serif;
       scroll-behavior:smooth;
     }
-<!-- REGISTRATION POPUP -->
 
-<div id="popupForm"
-style="
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.6);
-">
-
-  <div style="
-  background:white;
-  width:90%;
-  max-width:400px;
-  margin:80px auto;
-  padding:30px;
-  border-radius:12px;
-  ">
-
-    <h2 style="color:#1e3a8a;margin-bottom:20px;">
-      Event Registration
-    </h2>
-
-    <form onsubmit="registerSuccess(event)">
-
-      <input type="text"
-      placeholder="Full Name"
-      required>
-
-      <input type="email"
-      placeholder="Email"
-      required>
-
-      <input type="text"
-      placeholder="College Name"
-      required>
-
-      <input type="tel"
-      placeholder="Phone Number"
-      required>
-
-      <button type="submit" class="btn">
-        Submit
-      </button>
-
-      <button type="button"
-      class="btn"
-      onclick="document.getElementById('popupForm').style.display='none'"
-      style="margin-left:10px;background:red;">
-
-        Close
-
-      </button>
-
-    </form>
-
-  </div>
-
-</div>
     body{
       background:#f4f6f9;
     }
@@ -207,22 +146,34 @@ background:rgba(0,0,0,0.6);
       font-size:16px;
     }
 
-    .success-message{
-      display:none;
-      margin-top:20px;
-      padding:15px;
-      background:#d1fae5;
-      color:#065f46;
-      border-radius:8px;
-      font-weight:bold;
-    }
-
     footer{
       background:#1e3a8a;
       color:white;
       text-align:center;
       padding:18px;
       margin-top:50px;
+    }
+
+    /* POPUP */
+
+    #popupForm{
+      display:none;
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background:rgba(0,0,0,0.6);
+      z-index:9999;
+    }
+
+    .popup-content{
+      background:white;
+      width:90%;
+      max-width:400px;
+      margin:80px auto;
+      padding:30px;
+      border-radius:12px;
     }
 
   </style>
@@ -288,7 +239,8 @@ background:rgba(0,0,0,0.6);
           Build innovative AI solutions and compete with students nationwide.
         </p>
 
-        <button class="btn" onclick="openRegisterForm()">
+        <button class="btn"
+        onclick="document.getElementById('popupForm').style.display='block'">
 
           Register
 
@@ -310,7 +262,8 @@ background:rgba(0,0,0,0.6);
           Learn frontend and backend development from experts.
         </p>
 
-        <button class="btn" onclick="openRegisterForm()">
+        <button class="btn"
+        onclick="document.getElementById('popupForm').style.display='block'">
 
           Register
 
@@ -332,65 +285,12 @@ background:rgba(0,0,0,0.6);
           Showcase your coding skills and win exciting prizes.
         </p>
 
-        <button class="btn" onclick="openRegisterForm()">
+        <button class="btn"
+        onclick="document.getElementById('popupForm').style.display='block'">
 
           Register
 
         </button>
-
-      </div>
-
-    </div>
-
-    <!-- REGISTRATION FORM -->
-    <button class="btn" onclick="document.getElementById('popupForm').style.display='block'">
-  Register
-</button>
-
-    <div class="form-section"
-         id="registerForm"
-         style="display:none;">
-
-      <h2>Event Registration Form</h2>
-
-      <form onsubmit="registerSuccess(event)">
-
-        <label>Full Name</label>
-
-        <input type="text"
-               placeholder="Enter your full name"
-               required>
-
-        <label>Email</label>
-
-        <input type="email"
-               placeholder="Enter your email"
-               required>
-
-        <label>College Name</label>
-
-        <input type="text"
-               placeholder="Enter your college name"
-               required>
-
-        <label>Phone Number</label>
-
-        <input type="tel"
-               placeholder="Enter your phone number"
-               required>
-
-        <button type="submit" class="btn">
-
-          Submit Registration
-
-        </button>
-
-      </form>
-
-      <div class="success-message"
-           id="registrationSuccess">
-
-        Registration Successful!
 
       </div>
 
@@ -407,25 +307,25 @@ background:rgba(0,0,0,0.6);
         <label>Event Name</label>
 
         <input type="text"
-               placeholder="Enter event name"
-               required>
+        placeholder="Enter event name"
+        required>
 
         <label>College / Organization</label>
 
         <input type="text"
-               placeholder="Enter college or organization"
-               required>
+        placeholder="Enter college or organization"
+        required>
 
         <label>Date</label>
 
         <input type="date"
-               required>
+        required>
 
         <label>Description</label>
 
         <textarea rows="5"
-                  placeholder="Enter event details"
-                  required></textarea>
+        placeholder="Enter event details"
+        required></textarea>
 
         <button type="submit" class="btn">
 
@@ -435,16 +335,9 @@ background:rgba(0,0,0,0.6);
 
       </form>
 
-      <div class="success-message"
-           id="uploadSuccess">
-
-        Event Uploaded Successfully!
-
-      </div>
-
     </div>
 
-    <!-- AI AGENT SECTION -->
+    <!-- AI AGENT -->
 
     <div class="form-section" id="aiagent">
 
@@ -460,25 +353,18 @@ background:rgba(0,0,0,0.6);
 
       <p>
         The AI extracts event names, dates, timings, venues and
-        registration details using intelligent web scraping and
-        NLP techniques, then updates the platform automatically.
+        registration details using intelligent web scraping and NLP
+        techniques, then updates the platform automatically.
       </p>
 
       <br>
 
       <button class="btn"
-              onclick="runAIAgent()">
+      onclick="runAIAgent()">
 
         Run AI Agent
 
       </button>
-
-      <div class="success-message"
-           id="aiSuccess">
-
-        AI Agent scanned college social media pages and updated latest events successfully!
-
-      </div>
 
     </div>
 
@@ -491,6 +377,57 @@ background:rgba(0,0,0,0.6);
       <p>Email: campushub@gmail.com</p>
 
       <p>Phone: +91 9876543210</p>
+
+    </div>
+
+  </div>
+
+  <!-- REGISTRATION POPUP -->
+
+  <div id="popupForm">
+
+    <div class="popup-content">
+
+      <h2 style="color:#1e3a8a;margin-bottom:20px;">
+
+        Event Registration
+
+      </h2>
+
+      <form onsubmit="registerSuccess(event)">
+
+        <input type="text"
+        placeholder="Full Name"
+        required>
+
+        <input type="email"
+        placeholder="Email"
+        required>
+
+        <input type="text"
+        placeholder="College Name"
+        required>
+
+        <input type="tel"
+        placeholder="Phone Number"
+        required>
+
+        <button type="submit" class="btn">
+
+          Submit
+
+        </button>
+
+        <button type="button"
+        class="btn"
+        onclick="document.getElementById('popupForm').style.display='none'"
+        style="margin-left:10px;background:red;">
+
+          Close
+
+        </button>
+
+      </form>
 
     </div>
 
@@ -511,33 +448,30 @@ background:rgba(0,0,0,0.6);
 
   <script>
 
-<script>
+    function registerSuccess(event){
 
-function registerSuccess(event){
+      event.preventDefault();
 
-  event.preventDefault();
+      alert("Registration Successful!");
 
-  alert("Registration Successful!");
+      document.getElementById('popupForm').style.display='none';
 
-  document.getElementById('popupForm').style.display='none';
+    }
 
-}
+    function uploadSuccess(event){
 
-function uploadSuccess(event){
+      event.preventDefault();
 
-  event.preventDefault();
+      alert("Event Uploaded Successfully!");
 
-  alert("Event Uploaded Successfully!");
+    }
 
-}
+    function runAIAgent(){
 
-function runAIAgent(){
+      alert("AI Agent scanned college social media pages and updated latest events!");
 
-  alert("AI Agent scanned college social media pages and updated latest events!");
+    }
 
-}
-
-</script>
   </script>
 
 </body>
