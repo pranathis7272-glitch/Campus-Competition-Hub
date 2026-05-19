@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Campus Competition Hub</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      background:#f4f6f9;
+    }
+
+    header{
+      background:#1e3a8a;
+      color:white;
+      padding:20px;
+      text-align:center;
+    }
+
+    nav{
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      background:#2563eb;
+      padding:12px;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    .hero{
+      text-align:center;
+      padding:50px 20px;
+      background:white;
+    }
+
+    .hero h1{
+      font-size:40px;
+      color:#1e3a8a;
+      margin-bottom:15px;
+    }
+
+    .hero p{
+      font-size:18px;
+      color:#555;
+    }
+
+    .container{
+      padding:40px;
+    }
+
+    .events{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:20px;
+    }
+
+    .card{
+      background:white;
+      border-radius:10px;
+      padding:20px;
+      box-shadow:0 4px 8px rgba(0,0,0,0.1);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:scale(1.03);
+    }
+
+    .card h2{
+      color:#2563eb;
+      margin-bottom:10px;
+    }
+
+    .card p{
+      margin-bottom:10px;
+      color:#555;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:10px 15px;
+      background:#2563eb;
+      color:white;
+      text-decoration:none;
+      border-radius:5px;
+    }
+
+    .upload-section{
+      background:white;
+      margin-top:40px;
+      padding:30px;
+      border-radius:10px;
+    }
+
+    input, textarea{
+      width:100%;
+      padding:10px;
+      margin-top:10px;
+      margin-bottom:20px;
+      border:1px solid #ccc;
+      border-radius:5px;
+    }
+
+    button{
+      background:#1e3a8a;
+      color:white;
+      border:none;
+      padding:12px 20px;
+      border-radius:5px;
+      cursor:pointer;
+    }
+
+    footer{
+      margin-top:40px;
+      background:#1e3a8a;
+      color:white;
+      text-align:center;
+      padding:15px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Campus Competition Hub</h1>
+    <p>One Platform for Every Student Opportunity</p>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Events</a>
+    <a href="#">Hackathons</a>
+    <a href="#">Workshops</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <section class="hero">
+    <h1>Discover Competitions Easily</h1>
+    <p>
+      Find technical, cultural, sports, and academic events from different colleges in one place.
+    </p>
+  </section>
+
+  <div class="container">
+
+    <h2 style="margin-bottom:20px;">Upcoming Events</h2>
+
+    <div class="events">
+
+      <div class="card">
+        <h2>AI Hackathon 2026</h2>
+        <p><strong>College:</strong> XYZ Engineering College</p>
+        <p><strong>Date:</strong> 25 May 2026</p>
+        <p>Build innovative AI solutions and win exciting prizes.</p>
+        <a href="#" class="btn">Register</a>
+      </div>
+
+      <div class="card">
+        <h2>Cultural Fest</h2>
+        <p><strong>College:</strong> ABC University</p>
+        <p><strong>Date:</strong> 30 May 2026</p>
+        <p>Dance, music, fashion show and many exciting activities.</p>
+        <a href="#" class="btn">Register</a>
+      </div>
+
+      <div class="card">
+        <h2>National Coding Contest</h2>
+        <p><strong>Organizer:</strong> Tech Community</p>
+        <p><strong>Date:</strong> 10 June 2026</p>
+        <p>Compete with students across colleges and improve coding skills.</p>
+        <a href="#" class="btn">Register</a>
+      </div>
+
+    </div>
+
+    <div class="upload-section">
+      <h2>Upload New Event</h2>
+
+      <form>
+        <label>Event Name</label>
+        <input type="text" placeholder="Enter event name">
+
+        <label>College / Organization</label>
+        <input type="text" placeholder="Enter college name">
+
+        <label>Date</label>
+        <input type="date">
+
+        <label>Description</label>
+        <textarea rows="5" placeholder="Enter event details"></textarea>
+
+        <button type="submit">Upload Event</button>
+      </form>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>© 2026 Campus Competition Hub | Developed for Hackathon Prototype</p>
+  </footer>
+
+</body>
+</html>
