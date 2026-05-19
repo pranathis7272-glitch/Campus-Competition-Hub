@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Campus Competition Hub</title>
+
+<style>
+
+body{
+font-family:Arial;
+margin:0;
+background:#f4f6f9;
+}
+
+header{
+background:#1e3a8a;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+nav{
+background:#2563eb;
+padding:15px;
+text-align:center;
+}
+
+nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.hero{
+padding:50px;
+text-align:center;
+background:white;
+}
+
+.container{
+padding:40px;
+}
+
+.card{
+background:white;
+padding:20px;
+margin-bottom:20px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.btn{
+background:#2563eb;
+color:white;
+padding:10px 20px;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+.btn:hover{
+background:#1e3a8a;
+}
+
+.form-section{
+background:white;
+padding:30px;
+margin-top:30px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+input,textarea{
+width:100%;
+padding:12px;
+margin-top:10px;
+margin-bottom:20px;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+footer{
+background:#1e3a8a;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:40px;
+}
+
+/* POPUP */
+
+#popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+}
+
+.popup-content{
+background:white;
+width:90%;
+max-width:400px;
+padding:30px;
+margin:80px auto;
+border-radius:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Campus Competition Hub</h1>
+
+<p>One Platform for Every Student Opportunity</p>
+
+</header>
+
+<nav>
+
+<a href="#">Home</a>
+<a href="#events">Events</a>
+<a href="#upload">Upload Event</a>
+<a href="#ai">AI Agent</a>
+
+</nav>
+
+<section class="hero">
+
+<h1>Discover Competitions Easily</h1>
+
+<p>
+Find hackathons, workshops, coding contests and college events in one place.
+</p>
+
+</section>
+
+<div class="container" id="events">
+
+<h2>Upcoming Events</h2>
+
+<div class="card">
+
+<h3>AI Hackathon 2026</h3>
+
+<p>Date: 25 May 2026</p>
+
+<p>College: XYZ Engineering College</p>
+
+<button class="btn" onclick="openPopup()">
+
+Register
+
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>Web Development Workshop</h3>
+
+<p>Date: 30 May 2026</p>
+
+<p>Organizer: ABC University</p>
+
+<button class="btn" onclick="openPopup()">
+
+Register
+
+</button>
+
+</div>
+
+<!-- UPLOAD EVENT -->
+
+<div class="form-section" id="upload">
+
+<h2>Upload New Event</h2>
+
+<form onsubmit="uploadEvent(event)">
+
+<input type="text"
+placeholder="Event Name"
+required>
+
+<input type="text"
+placeholder="College Name"
+required>
+
+<input type="date"
+required>
+
+<textarea
+placeholder="Event Description"
+required></textarea>
+
+<button type="submit" class="btn">
+
+Upload Event
+
+</button>
+
+</form>
+
+</div>
+
+<!-- AI AGENT -->
+
+<div class="form-section" id="ai">
+
+<h2>AI Event Tracking Agent</h2>
+
+<p>
+Our AI Agent scans college social media pages and websites
+to automatically update latest event dates, timings,
+registration links and competition details.
+</p>
+
+<br>
+
+<button class="btn" onclick="runAI()">
+
+Run AI Agent
+
+</button>
+
+</div>
+
+</div>
+
+<!-- REGISTRATION POPUP -->
+
+<div id="popup">
+
+<div class="popup-content">
+
+<h2>Registration Form</h2>
+
+<form onsubmit="submitRegistration(event)">
+
+<input type="text"
+placeholder="Full Name"
+required>
+
+<input type="email"
+placeholder="Email"
+required>
+
+<input type="text"
+placeholder="College Name"
+required>
+
+<input type="tel"
+placeholder="Phone Number"
+required>
+
+<button type="submit" class="btn">
+
+Submit
+
+</button>
+
+<button type="button"
+class="btn"
+style="background:red;"
+onclick="closePopup()">
+
+Close
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+<footer>
+
+<p>
+© 2026 Campus Competition Hub
+</p>
+
+</footer>
+
+<script>
+
+function openPopup(){
+
+document.getElementById("popup").style.display="block";
+
+}
+
+function closePopup(){
+
+document.getElementById("popup").style.display="none";
+
+}
+
+function submitRegistration(event){
+
+event.preventDefault();
+
+alert("Registration Successful!");
+
+closePopup();
+
+}
+
+function uploadEvent(event){
+
+event.preventDefault();
+
+alert("Event Uploaded Successfully!");
+
+}
+
+function runAI(){
+
+alert("AI Agent scanned college social media pages and updated latest events!");
+
+}
+
+</script>
+
+</body>
+</html>
