@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Campus Competition Hub</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#f4f6f9;
+    }
+
+    header{
+      background:#1e3a8a;
+      color:white;
+      padding:20px;
+      text-align:center;
+    }
+
+    nav{
+      display:flex;
+      justify-content:center;
+      gap:25px;
+      background:#2563eb;
+      padding:15px;
+      position:sticky;
+      top:0;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:yellow;
+    }
+
+    .hero{
+      text-align:center;
+      padding:70px 20px;
+      background:white;
+    }
+
+    .hero h1{
+      font-size:42px;
+      color:#1e3a8a;
+      margin-bottom:20px;
+    }
+
+    .hero p{
+      font-size:18px;
+      color:#555;
+      max-width:800px;
+      margin:auto;
+    }
+
+    .container{
+      padding:40px;
+    }
+
+    h2{
+      margin-bottom:20px;
+      color:#1e3a8a;
+    }
+
+    .events{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:20px;
+    }
+
+    .card{
+      background:white;
+      border-radius:12px;
+      padding:20px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+    }
+
+    .card h3{
+      color:#2563eb;
+      margin-bottom:10px;
+    }
+
+    .card p{
+      color:#555;
+      margin-bottom:10px;
+      line-height:1.5;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:10px 18px;
+      background:#2563eb;
+      color:white;
+      text-decoration:none;
+      border-radius:6px;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#1e3a8a;
+    }
+
+    .upload-section{
+      background:white;
+      margin-top:50px;
+      padding:30px;
+      border-radius:12px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    input, textarea{
+      width:100%;
+      padding:12px;
+      margin-top:10px;
+      margin-bottom:20px;
+      border:1px solid #ccc;
+      border-radius:6px;
+      font-size:16px;
+    }
+
+    button{
+      background:#1e3a8a;
+      color:white;
+      border:none;
+      padding:12px 20px;
+      border-radius:6px;
+      cursor:pointer;
+      font-size:16px;
+    }
+
+    button:hover{
+      background:#2563eb;
+    }
+
+    .about, .contact{
+      background:white;
+      margin-top:40px;
+      padding:30px;
+      border-radius:12px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    footer{
+      margin-top:50px;
+      background:#1e3a8a;
+      color:white;
+      text-align:center;
+      padding:18px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+    <h1>Campus Competition Hub</h1>
+    <p>One Platform for Every Student Opportunity</p>
+  </header>
+
+  <!-- NAVBAR -->
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#events">Events</a>
+    <a href="#hackathons">Hackathons</a>
+    <a href="#workshops">Workshops</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- HERO SECTION -->
+
+  <section class="hero" id="home">
+    <h1>Discover Competitions Easily</h1>
+
+    <p>
+      Find technical, cultural, sports, workshops, hackathons and academic events
+      from various colleges in one centralized platform.
+    </p>
+  </section>
+
+  <!-- EVENTS SECTION -->
+
+  <div class="container" id="events">
+
+    <h2>Upcoming Events</h2>
+
+    <div class="events">
+
+      <!-- EVENT 1 -->
+
+      <div class="card" id="hackathons">
+        <h3>AI Hackathon 2026</h3>
+
+        <p><strong>College:</strong> XYZ Engineering College</p>
+
+        <p><strong>Date:</strong> 25 May 2026</p>
+
+        <p>
+          Participate in an exciting AI hackathon and build innovative solutions.
+        </p>
+
+        <a href="https://forms.gle/" target="_blank" class="btn">
+          Register
+        </a>
+      </div>
+
+      <!-- EVENT 2 -->
+
+      <div class="card" id="workshops">
+        <h3>Web Development Workshop</h3>
+
+        <p><strong>Organizer:</strong> ABC University</p>
+
+        <p><strong>Date:</strong> 30 May 2026</p>
+
+        <p>
+          Learn frontend and backend web development from industry experts.
+        </p>
+
+        <a href="https://forms.gle/" target="_blank" class="btn">
+          Register
+        </a>
+      </div>
+
+      <!-- EVENT 3 -->
+
+      <div class="card">
+        <h3>National Coding Contest</h3>
+
+        <p><strong>Organizer:</strong> Tech Community</p>
+
+        <p><strong>Date:</strong> 10 June 2026</p>
+
+        <p>
+          Compete with students nationwide and improve coding skills.
+        </p>
+
+        <a href="https://forms.gle/" target="_blank" class="btn">
+          Register
+        </a>
+      </div>
+
+    </div>
+
+    <!-- EVENT UPLOAD FORM -->
+
+    <div class="upload-section">
+
+      <h2>Upload New Event</h2>
+
+      <form onsubmit="showMessage(event)">
+
+        <label>Event Name</label>
+        <input type="text" placeholder="Enter event name" required>
+
+        <label>College / Organization</label>
+        <input type="text" placeholder="Enter college name" required>
+
+        <label>Date</label>
+        <input type="date" required>
+
+        <label>Description</label>
+        <textarea rows="5" placeholder="Enter event details" required></textarea>
+
+        <button type="submit">
+          Upload Event
+        </button>
+
+      </form>
+
+    </div>
+
+    <!-- ABOUT SECTION -->
+
+    <div class="about">
+
+      <h2>About Platform</h2>
+
+      <p>
+        Campus Competition Hub is a centralized platform where students can discover
+        inter-college competitions, workshops, hackathons, cultural and sports events
+        easily in one place.
+      </p>
+
+    </div>
+
+    <!-- CONTACT SECTION -->
+
+    <div class="contact" id="contact">
+
+      <h2>Contact</h2>
+
+      <p>Email: campushub@gmail.com</p>
+
+      <p>Phone: +91 9876543210</p>
+
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <p>
+      © 2026 Campus Competition Hub | Developed for Hackathon Prototype
+    </p>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    function showMessage(event) {
+
+      event.preventDefault();
+
+      alert("Event uploaded successfully!");
+
+    }
+
+  </script>
+
+</body>
+</html>
